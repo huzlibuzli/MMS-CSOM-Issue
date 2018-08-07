@@ -16,23 +16,25 @@ namespace MetadataFieldTest
         {
             Console.WriteLine("Document Path:");
             //var path = Console.ReadLine();
-            var path = "C://tmp/Dokument.docx";
+            //var path = "C://tmp/Dokument.docx";
+            var path = "C://tmp/Intranet_Organisation.pdf";
+            
             Console.WriteLine("URL of Site Collection:");
             //var libraryUrl = Console.ReadLine();
-            var siteUrl = "http://dev2013vm2/";
-            //var siteUrl = "http://dev2013vm2/OE/00122/00002/00001/";
+            var siteUrl = "http://dev2016vm1/sites/mmstest/";
+            //var siteUrl = "http://dev2013v/OE/00122/00002/00001/";
             Console.WriteLine("Name of Document Library:");
             //var libraryUrl = Console.ReadLine();
-            var libraryName = "Dokumente";
+            var libraryName = "Documents";
             //var libraryName = "DokTest";
-            Console.WriteLine("Name of Metadata Field:");
+           // Console.WriteLine("Name of Metadata Field:");
             //var fieldName = Console.ReadLine();
             var fieldName = "Managed";
             //var fieldName = "DMS_Schlagwoerter";
-            Console.WriteLine("Name of Metadata Field:");
+            //Console.WriteLine("Name of Metadata Field:");
             //var fieldName = Console.ReadLine();
             //var fieldValue = "Test|d2c51dbc-6f7c-4ee8-8785-cbe36e359125";
-            var fieldValue = "Asdf|e197894f-7222-4c63-ab85-4234c7bdddb0";
+            var fieldValue = "Wert1|23463c06-0435-4cd7-8fb3-08f7e648e291";
             var url = siteUrl + "_api/web/lists/getbytitle('" + libraryName + "')/rootfolder/files/add(url='" + DateTime.Now.Ticks + path.Substring(path.LastIndexOf('/') + 1) + "', overwrite=true)";
             UploadToSharePoint(path, siteUrl, url, fieldName, fieldValue).Wait();
             Console.WriteLine("Upload finished.");
